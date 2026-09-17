@@ -16,7 +16,9 @@ The pouch is the restriction. The bypass is the same habit moving to the next av
 
 Illinois Public Act 104-0657 makes that literal. It requires every district to adopt a bell-to-bell wireless communication device policy before the 2027–28 school year, and its definition excludes a device issued by the school or a teacher for educational purposes. The statute regulates one channel of the screen ecology and exempts the rest by definition.
 
-The deck moves through five slides: the framing, the shift from screen time to screen ecology, what the policy reaches and what it exempts, parents as policy partners, and the leadership challenge that follows from all four.
+The deck moves through seven slides: the framing, the shift from screen time to screen ecology, the three implementation models under consideration, what the policy reaches and what it exempts, the recording-glasses deliberation that broke the device frame, parents as policy partners, and the leadership challenge that follows.
+
+The glasses slide is the argument's second proof. Weeks into drafting a phone policy, a staff member observed a parent at dismissal apparently wearing recording-capable glasses. The wearer was a visitor rather than a student, the governing law was the Illinois Eavesdropping Act rather than the device statute, and no remedy could ban a category of eyewear without banning accessibility with it. The interim position regulates conduct instead of hardware, which is the opposite posture from the phone policy written three weeks earlier.
 
 ## Sources on the slides
 
@@ -25,9 +27,12 @@ The deck moves through five slides: the framing, the shift from screen time to s
 | Bell-to-bell policy required before 2027–28 | Public Act 104-0657 (SB 2427), signed July 28, 2026 |
 | "Wireless communication device" excludes school-issued devices | Public Act 104-0657, definition |
 | Teachers estimate 1 in 3 students on laptops for nonacademic purposes | ISBE, *Model Cell Phone Policy*, reporting the Phones in Focus study with Harvard's Center for Education Policy Research |
-| Town hall design on slide 4 | Beach Park District 3 town hall action plan |
+| Three implementation models on slide 3 | Beach Park District 3 draft Policy 7:190-AP1, options under board consideration |
+| Town hall design on slide 6 | Beach Park District 3 town hall action plan |
+| Recording-glasses position on slide 5 | District leadership brief, August 2026, anchored to 720 ILCS 5/14-1 and 14-2, FERPA, ISSRA, CoSN, ISTE+ASCD, and the NIST Privacy Framework |
+| "A car line is not a classroom" | 720 ILCS 5/14-2 turns on a *private conversation* where privacy is reasonably expected; outdoor arrival and dismissal areas carry a lower expectation than classrooms |
 
-ISBE's model policy toolkit is informational, not legal advice. Verify current statutory language with district counsel before adopting policy.
+ISBE's model policy toolkit is informational, not legal advice, and the recording-glasses position is interim guidance rather than adopted policy. The three implementation models are options under board consideration, not decisions. Verify current statutory language with district counsel before adopting policy.
 
 ---
 
@@ -35,7 +40,7 @@ ISBE's model policy toolkit is informational, not legal advice. Verify current s
 
 | Path | What it is |
 | :--- | :--- |
-| [`/`](https://minerclass.github.io/ietl-pouch-and-bypass/) | The five-slide deck. Self-contained: no build step, no dependencies, no external assets |
+| [`/`](https://minerclass.github.io/ietl-pouch-and-bypass/) | The seven-slide deck. Self-contained: no build step, no dependencies, no external assets |
 | `.github/workflows/pages.yml` | Artifact-based Pages deploy, matching the rest of the ecosystem |
 
 ---
@@ -55,7 +60,7 @@ Open the Pages URL. The intended experience is a web slide deck, not a PowerPoin
 
 Deep links work: `#slide-3` opens slide 3 directly, and browser back and forward stay in sync with the deck.
 
-**Printing** produces a landscape handout with all five slides and the speaker notes beneath each one. The dark cards keep their backgrounds via `print-color-adjust`, so print from a browser rather than exporting through a converter.
+**Printing** produces a landscape handout with all seven slides and the speaker notes beneath each one. The dark cards keep their backgrounds via `print-color-adjust`, so print from a browser rather than exporting through a converter.
 
 ---
 
