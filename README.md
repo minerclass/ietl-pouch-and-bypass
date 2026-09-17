@@ -14,7 +14,20 @@
 
 The pouch is the restriction. The bypass is the same habit moving to the next available screen, often one the school issued. Removing one screen does not redesign the ecology.
 
-The deck moves through five slides: the framing, the shift from screen time to screen ecology, device access designed by instructional purpose across K–5 and middle school, parents as policy partners, and the leadership challenge that follows from all four.
+Illinois Public Act 104-0657 makes that literal. It requires every district to adopt a bell-to-bell wireless communication device policy before the 2027–28 school year, and its definition excludes a device issued by the school or a teacher for educational purposes. The statute regulates one channel of the screen ecology and exempts the rest by definition.
+
+The deck moves through five slides: the framing, the shift from screen time to screen ecology, what the policy reaches and what it exempts, parents as policy partners, and the leadership challenge that follows from all four.
+
+## Sources on the slides
+
+| Claim | Source |
+| :--- | :--- |
+| Bell-to-bell policy required before 2027–28 | Public Act 104-0657 (SB 2427), signed July 28, 2026 |
+| "Wireless communication device" excludes school-issued devices | Public Act 104-0657, definition |
+| Teachers estimate 1 in 3 students on laptops for nonacademic purposes | ISBE, *Model Cell Phone Policy*, reporting the Phones in Focus study with Harvard's Center for Education Policy Research |
+| Town hall design on slide 4 | Beach Park District 3 town hall action plan |
+
+ISBE's model policy toolkit is informational, not legal advice. Verify current statutory language with district counsel before adopting policy.
 
 ---
 
