@@ -30,6 +30,7 @@ The glasses slide is the argument's second proof. Weeks into drafting a phone po
 | Three implementation models on slide 3 | Beach Park District 3 draft Policy 7:190-AP1, options under board consideration |
 | Town hall design on slide 6 | Beach Park District 3 town hall action plan |
 | Recording-glasses position on slide 5 | District leadership brief, August 2026, anchored to 720 ILCS 5/14-1 and 14-2, FERPA, ISSRA, CoSN, ISTE+ASCD, and the NIST Privacy Framework |
+| Posted-notice strip on slide 5 | Beach Park District 3 recommended signage, layered by placement: brief at the roadway, complete at the door, compact inside |
 | "A car line is not a classroom" | 720 ILCS 5/14-2 turns on a *private conversation* where privacy is reasonably expected; outdoor arrival and dismissal areas carry a lower expectation than classrooms |
 
 ISBE's model policy toolkit is informational, not legal advice, and the recording-glasses position is interim guidance rather than adopted policy. The three implementation models are options under board consideration, not decisions. Verify current statutory language with district counsel before adopting policy.
@@ -59,6 +60,8 @@ Open the Pages URL. The intended experience is a web slide deck, not a PowerPoin
 | Swipe left or right | Change slides on a touch device |
 
 Deep links work: `#slide-3` opens slide 3 directly, and browser back and forward stay in sync with the deck.
+
+**Presenting on a projector.** The slide box is `min(680px, 100vh - 7rem)`, so a 1280x720 display leaves it only 608px tall. A height-based media query below 860px scales type, padding, and card sizing so the dense slides fit rather than scroll. Verified clean at 1280x720, 1366x768, 1440x900, 1920x1080, and 1024x640. Below roughly 620px of viewport height two slides scroll inside their own box, which is the intended `overflow:auto` fallback.
 
 **Printing** produces a landscape handout with all seven slides and the speaker notes beneath each one. The dark cards keep their backgrounds via `print-color-adjust`, so print from a browser rather than exporting through a converter.
 

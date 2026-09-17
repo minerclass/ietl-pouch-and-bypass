@@ -140,6 +140,13 @@ h2{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;letter-spacing:-.045em;margi
 }
 .principle{grid-column:1/-1;text-align:center;font-size:1.18rem;font-weight:900}
 
+/* The posted-notice strip on the glasses slide. Layered by placement:
+   brief at the roadway, complete at the door, compact inside. */
+.signs{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.8rem}
+.sign{padding:.55rem .75rem;border:2px dashed #10233f38;border-radius:12px;background:#10233f08}
+.sign b{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.2rem}
+.sign span{display:block;font-size:.84rem;line-height:1.33;color:var(--muted)}
+
 .steps{align-self:center;display:grid;gap:.8rem}
 .step{display:grid;grid-template-columns:48px 1fr;gap:1rem;align-items:start;padding:1rem 1.1rem;border-radius:18px;border:1px solid #10233f20;background:#fff}
 .num{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--blue);color:#fff;font-weight:900}
@@ -200,10 +207,43 @@ noscript .fallback{
   .slide{transform:none}
 }
 
+/* Projector heights. The slide box is height:min(680px,100vh - 7rem), so a
+   1280x720 display leaves only 608px and the default type overflows on the
+   denser slides. Scale the slide down instead of cutting copy the argument
+   needs. Guarded above the 850px mobile breakpoint so the two do not fight. */
+@media (min-width:851px) and (max-height:860px){
+  .slide{padding:2.2rem 3rem}
+  .slide-in{gap:.7rem}
+  h1{font-size:clamp(2.6rem,6vw,4.6rem);margin:.5rem 0 .8rem}
+  h2{font-size:clamp(1.9rem,4vw,3.3rem);margin:.5rem 0 .85rem}
+  .lead{font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.45}
+  .sub{font-size:.92rem;margin-bottom:.75rem}
+  .callout{padding:.7rem 1rem;font-size:1rem}
+  .cards3,.framework{gap:.75rem}
+  .card{padding:1.05rem;border-radius:16px}
+  .card b{font-size:1.05rem;margin-bottom:.3rem}
+  .card p{font-size:.92rem;line-height:1.4}
+  .strategy-grid{gap:.85rem}
+  .strategy{min-height:0;padding:1.2rem;border-radius:18px}
+  .strategy h3{font-size:1.4rem;margin:.6rem 0 .45rem}
+  .strategy p{font-size:.95rem;line-height:1.45}
+  .strategy:after{width:130px;height:130px;right:-45px;bottom:-50px;border-width:20px}
+  .principle{font-size:1rem}
+  .steps{gap:.55rem}
+  .step{padding:.7rem .9rem;grid-template-columns:40px 1fr;gap:.8rem}
+  .num{width:36px;height:36px;border-radius:12px}
+  .step span{font-size:.92rem;line-height:1.35}
+  .signs{margin-top:.6rem;gap:.5rem}
+  .sign{padding:.45rem .65rem}
+  .sign span{font-size:.79rem;line-height:1.3}
+  .final .framework div{padding:.9rem;border-radius:14px}
+  .footer{font-size:.8rem}
+}
+
 @media(max-width:850px){
   .deck{padding:.75rem}
   .slide{width:calc(100vw - 1.5rem);height:calc(100vh - 5.5rem);padding:1.7rem}
-  .cards3,.framework,.strategy-grid{grid-template-columns:1fr}
+  .cards3,.framework,.strategy-grid,.signs{grid-template-columns:1fr}
   .principle{grid-column:auto}
   .strategy{min-height:0}
   h1{font-size:3.5rem}
@@ -283,9 +323,9 @@ noscript .fallback{
     <div>
       <h2>Three models, one <span class="blue">question</span></h2>
       <div class="steps">
-        <div class="step"><div class="num" aria-hidden="true">A</div><div><b>Off and away</b><span>Grades K&ndash;8, full day. Phones off rather than silenced, stored in a locker or cubby before first period, and not carried at transitions, lunch, or recess</span></div></div>
-        <div class="step"><div class="num" aria-hidden="true">B</div><div><b>App-managed</b><span>The device stays with the student. Parents install the app and set emergency contact rules, and the district disables apps, social media, and camera during school hours</span></div></div>
-        <div class="step"><div class="num" aria-hidden="true">C</div><div><b>Bell to bell in class</b><span>Grades 6&ndash;8. Devices in classroom caddies or backpacks every period, silent and out of sight, with passing periods, lunch, and recess also restricted</span></div></div>
+        <div class="step"><div class="num" aria-hidden="true">A</div><div><b>Off and away</b><span>Grades K&ndash;8, full day. Phones off rather than silenced, stored in a locker or cubby, and not carried at transitions, lunch, or recess</span></div></div>
+        <div class="step"><div class="num" aria-hidden="true">B</div><div><b>App-managed</b><span>The device stays with the student. Parents set emergency contact rules; the district disables apps, social media, and camera during school hours</span></div></div>
+        <div class="step"><div class="num" aria-hidden="true">C</div><div><b>Bell to bell in class</b><span>Grades 6&ndash;8. Devices in caddies or backpacks every period, with passing periods, lunch, and recess also restricted</span></div></div>
       </div>
       <div class="callout">All three answer where the phone goes. None answers what happens on the next screen.</div>
     </div>
@@ -320,20 +360,25 @@ noscript .fallback{
 
 <section class="slide" id="slide-5" role="group" aria-roledescription="slide" aria-label="Slide 5 of 7"
   data-title="Then the Glasses Arrived"
-  data-notes="In August a staff member observed a parent at dismissal apparently wearing recording-capable glasses. Weeks into writing a phone policy, the next device walked in through the pickup line, and it broke the frame in three places. The wearer was a visitor rather than a student, so lockers, caddies, and a parent-installed app reached none of it. The governing law was not the device statute but the Illinois Eavesdropping Act, which turns on a private conversation and a reasonable expectation of privacy, and an outdoor car line is not a classroom. And the remedy could not be a ban, because you cannot prohibit a category of eyewear without prohibiting accessibility along with it. The interim position was to regulate the conduct rather than the eyewear: prohibit unauthorized capture and transmission in nonpublic student areas, require capture functions off unless authorized, and keep an individualized path open for accessibility. That is the opposite posture from the phone policy. The phone policy regulates the device. The glasses forced us to regulate the behavior.">
+  data-notes="In August a staff member observed a parent at dismissal apparently wearing recording-capable glasses. Weeks into writing a phone policy, the next device walked in through the pickup line, and it broke the frame in three places. The wearer was a visitor rather than a student, so lockers, caddies, and a parent-installed app reached none of it. The governing law was not the device statute but the Illinois Eavesdropping Act, which turns on a private conversation and a reasonable expectation of privacy, and an outdoor car line is not a classroom. And the remedy could not be a ban, because you cannot prohibit a category of eyewear without prohibiting accessibility along with it. The interim position was to regulate the conduct rather than the eyewear: prohibit unauthorized capture and transmission in nonpublic student areas, require capture functions off unless authorized, and keep an individualized path open for accessibility. That is the opposite posture from the phone policy. The phone policy regulates the device. The glasses forced us to regulate the behavior. The signage follows the same rule and is deliberately layered: the shortest message at the parking entrance, readable at low vehicle speed; the complete visitor expectation at the door, including the line that accessibility devices are permitted; and a compact notice inside near classrooms, student services, and conference rooms. Every notice is technology-neutral, naming the conduct rather than a brand. Four things the signs must never say: that all recording is illegal, that FERPA universally prohibits recording students, that smart glasses are banned as a category, or that visitors must surrender personal devices. Each of those overstates district authority, and counsel approves the final wording and any enforcement consequence.">
   <div class="slide-in">
     <div class="eyebrow">The Next Device</div>
     <div>
       <h2>Then the <span class="blue">glasses</span> arrived</h2>
-      <p class="sub">A parent at dismissal, apparently wearing recording-capable glasses. Weeks into writing a phone policy, the next device walked in through the pickup line.</p>
+      <p class="sub">A parent at dismissal, apparently wearing recording-capable glasses. The next device walked in through the pickup line.</p>
       <div class="cards3">
-        <div class="card"><b>The wearer</b><p>A visitor, not a student. Lockers, caddies, and a parent-installed app reach none of it.</p></div>
-        <div class="card"><b>The law</b><p>Not the device statute. The Illinois Eavesdropping Act turns on a private conversation, and a car line is not a classroom.</p></div>
-        <div class="card"><b>The remedy</b><p>No category ban. You cannot prohibit eyewear without prohibiting accessibility along with it.</p></div>
+        <div class="card"><b>The wearer</b><p>A visitor, not a student. Lockers, caddies, and a parent app reach none of it.</p></div>
+        <div class="card"><b>The law</b><p>Not the device statute. The Eavesdropping Act turns on a private conversation, and a car line is not a classroom.</p></div>
+        <div class="card"><b>The remedy</b><p>No category ban. Prohibiting eyewear would prohibit accessibility with it.</p></div>
       </div>
       <div class="callout">Regulate the conduct, not the eyewear.</div>
+      <div class="signs">
+        <div class="sign"><b>At the roadway</b><span>Disable recording functions during arrival and dismissal.</span></div>
+        <div class="sign"><b>At the door</b><span>No capture in nonpublic areas without authorization. Accessibility devices permitted.</span></div>
+        <div class="sign"><b>Inside</b><span>Keep recording, transcription, and AI capture off.</span></div>
+      </div>
     </div>
-    <div class="footer"><strong>Interim guidance &middot; August 2026</strong><span>05 / 07</span></div>
+    <div class="footer"><strong>Layered, technology-neutral notices &middot; August 2026</strong><span>05 / 07</span></div>
   </div>
 </section>
 
